@@ -23,8 +23,8 @@ class App {
 		final DefaultObjectWrapperBuilder builder = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_28);
 		final DefaultObjectWrapper defaultObjectWrapper = builder.build();
 		cfg.setObjectWrapper(defaultObjectWrapper);
-		Template t = new Template("templateName", new StringReader(pTemplate), cfg);
-		Writer out = new StringWriter();
+		final Template t = new Template("templateName", new StringReader(pTemplate), cfg);
+		final Writer out = new StringWriter();
 		t.process(model, out);
 		final String transformedTemplate = out.toString();
 		return transformedTemplate;
